@@ -4,7 +4,7 @@
     <div class="live-left">
       <div class="live-left-tree">
         <v-tree :treeData="treeData"></v-tree>
-      </div>      
+      </div>
     </div>
     <!-- 视频显示控件 -->
     <div class="live-content">

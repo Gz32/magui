@@ -1,6 +1,10 @@
 <template>
   <div class="slider-container">
-    <range-slider class="slider" :min="minValue" :max="maxValue" :step="step" v-model="sliderValue"></range-slider>
+    <range-slider class="slider" 
+                  v-model="sliderValue" 
+                  :min="minValue" 
+                  :max="maxValue" 
+                  :step="step" ></range-slider>
   </div>
 </template>
 
@@ -22,18 +26,14 @@
         type: Number,
         default: 100,
       },
-      sliderValue: {
-        type: Number,
-        default: 1,
-      },
       step: {
         type: Number,
         default: 1,
-      },
-
+      }
     },
     data() {
       return {
+        sliderValue: 1
       }
     },
     methods: {
@@ -42,4 +42,8 @@
 </script>
 
 <style scoped>
+  .slider {
+    /* overwrite slider styles */
+    width: 100px;
+  }
 </style>

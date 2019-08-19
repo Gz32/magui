@@ -155,10 +155,7 @@
   .volume-slider{
     margin: 15px 10px 0 0;
   }
-  .slider{
-    width: 100px;
-  } 
-
+ 
   .screen-button:active{
 	  position: relative;
 	  top: 1px;
