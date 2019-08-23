@@ -28,7 +28,7 @@
   videojs.options.flash.swf = SWF_URL; // 设置flash路径
 
   export default {
-    name: 'vPlayer', // 注意name不能重复, 否则可能引发 'RangeError: Maximum call stack size exceeded' 异常
+    name: 'vPlayer', // 播放器组件 注意name不能重复, 否则可能引发 'RangeError: Maximum call stack size exceeded' 异常
     components: {
       videoPlayer
     },
@@ -186,14 +186,13 @@
 <!--<style lang="scss">-->
 <style scoped>
   .player-container{
-    position: relative;
-    width: 100%;
-    height: 100% !important;    
+    position: relative;    
+    height: 100% !important;
+    background: #000;   
   }
   
   .player-content{
     position: relative;
-    background: #000;
     /* 水平居中 */
     margin: 0 auto;
     /* 垂直居中 */

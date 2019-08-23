@@ -36,7 +36,8 @@
         </div>
       </a>
       <div class="volume-slider">
-        <range-slider class="slider" :min="minValue" :max="maxValue" step="1" v-model="sliderValue"></range-slider>
+        <range-slider class="slider" :min="minValue" :max="maxValue" :step="1" v-model="sliderValue"
+                      @change="valueChanged"></range-slider>
       </div>
 
       <a class="screen-button" @click="handleFullscreen">
@@ -53,7 +54,6 @@
 
 <script>
   import RangeSlider from 'vue-range-slider'
-  import '@/assets/css/vue-range-slider.css'
   
   export default {
     name: 'vPlaybar',
@@ -70,8 +70,12 @@
         isFullscreen: false, // 是否全屏
 
         minValue: 0,
-        maxValue: 99,
+        maxValue: 100,
         sliderValue: 0
+      }
+    },
+    watch: {
+      isMut: function (val) {        
       }
     },
     methods: {
@@ -105,8 +109,12 @@
         if (this.isMut) {
           this.sliderValue = this.minValue;
         } else {
-          this.sliderValue = this.maxValue;
+          this.sliderValue = this.maxValue / 2;
         }
+      },
+      valueChanged(val) {
+        this.isMut = val === 0;
+        //alert(this.sliderValue + ',' + val);
       },
       // 全屏
       handleFullscreen() {
@@ -153,7 +161,10 @@
   }
 
   .volume-slider{
-    margin: 15px 10px 0 0;
+    margin: 12px 12px 5px 5px;
+  }
+  .slider{
+    width: 100px;
   }
  
   .screen-button:active{

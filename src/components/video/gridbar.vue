@@ -1,23 +1,33 @@
 <template>
   <div class="gridbar-container">
-    <a class="grid-button" @click="selectGrid">
-        <img class="grid-button-img" src="../../icons/video/grid.png"/>
-      </a>
-      <a class="grid-button" @click="selectGrid2">
-        <img class="grid-button-img" src="../../icons/video/grid2.png"/>
-      </a>
+    <a class="grid-button" @click="layout('1x1')">
+      <img src="../../icons/video/grid-1x1.png"/>
+    </a>
+    <a class="grid-button" @click="layout('2x2')">
+      <img src="../../icons/video/grid-2x2.png"/>
+    </a>
+    <a class="grid-button" @click="layout('2x3')">
+      <img src="../../icons/video/grid-2x3.png"/>
+    </a>
+    <a class="grid-button" @click="layout('2x4')">
+      <img src="../../icons/video/grid-2x4.png"/>
+    </a>
+    <a class="grid-button" @click="layout('3x3')">
+      <img src="../../icons/video/grid-3x3.png"/>
+    </a>
   </div>
 </template>
 
 <script>
   export default {
     name: 'vGridbar',
+    data () {
+      return {
+      }
+    },
     methods: {
-      selectGrid() {
-        this.$emit('selectGridEvent','1x1');
-      },
-      selectGrid2() {
-        this.$emit('selectGridEvent','2x2');
+      layout(val) {
+        this.$emit('selectGridEvent',val);
       }
     }
   }
@@ -32,11 +42,14 @@
     display: inline-flex;
     margin: 5px 0px 0px 5px; /* 上右下左 */
   }
+  .grid-button:hover{
+    cursor: pointer;
+  }
   .grid-button:active{
 	  position: relative;
 	  top: 1px;
   }
-  .grid-button-img{
+  .grid-button img{
     width: 40px;
     height: 40px;
   }

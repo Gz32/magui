@@ -19,7 +19,7 @@
   import vPlayer from './player'
 
   export default {
-    name: 'vPlayergrid2x2',    
+    name: 'vPlayergrid2x2', // 2x2播放组件 
     components: {
       vPlayer
     },
@@ -64,11 +64,9 @@
     flex-wrap: wrap;
   }
   .playergrid2x2-item{
-    width: 49.4%;
-    height: 49.4%;
-    margin: 2px;    
-    background-color: #000;
-    border: 1px solid #282C34; 
+    width: 50%;
+    height: 50%;
+    background-color: #000;     
   }
   .selected{
     border: 1px solid rgb(145, 14, 80);

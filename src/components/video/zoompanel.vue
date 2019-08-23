@@ -1,6 +1,6 @@
 <template>
   <div class="zoompanel-container">
-    <a class='slice-one' @click="handleTop">
+    <!--<a class='slice-one' @click="handleTop">
       <img src="../../icons/video/zoom-rotate.png" />
     </a>
     <a class='slice-two' @click="handleTopRight">
@@ -23,14 +23,37 @@
     </a>
     <a class='slice-eight' @click="handleTopLeft">
       <img src="../../icons/video/zoom-rotate.png" />
+    </a>-->
+    <a v-for="(item,index) in classes" :key="index" 
+       :class="['slice-' + item.cls]" 
+       @click="handleZoom(item.type)">
+      <img src="../../icons/video/zoom-rotate.png" />
     </a>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'vZoompanel',
+    name: 'vZoompanel', // 云台面板组件
+    data() {
+      return {
+        classes: [
+          {cls: 'one', type: 'lt'},
+          {cls: 'two', type: 'tc'},
+          {cls: 'three', type: 'tr'},
+          {cls: 'four', type: 'rc'},
+          {cls: 'five', type: 'rb'},
+          {cls: 'six', type: 'bc'},
+          {cls: 'seven', type: 'bl'},
+          {cls: 'eight', type: 'lc'}
+        ]
+      }
+    },
     methods: {
+      handleZoom(val){
+        this.$emit('zoomEvent', val);
+      }
+      /*
       handleTopLeft() {
         this.$emit('zoomEvent', 'lt'); // 左上
       },
@@ -54,7 +77,7 @@
       },
       handleLeft() {
         this.$emit('zoomEvent', 'lc'); // 左
-      },
+      }*/
     }
   }
 </script>
@@ -83,8 +106,8 @@
     cursor: pointer;
   }
   .zoompanel-container a img{
-    margin-top: 35px;
-    margin-left: 0px;
+    margin-top: 34px;
+    margin-left: -2px;
   }
 
   .slice-one {

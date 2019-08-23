@@ -61,7 +61,7 @@ const axiosInstance = axios.create({
 if (process.env.NODE_ENV == 'development') {
     axios.defaults.baseURL = 'http://localhost:8089/';
 } else if (process.env.NODE_ENV == 'production') {
-    axios.defaults.baseURL = 'http://192.168.1.154:8080/JT-hd/';
+    axios.defaults.baseURL = 'http://192.168.1.76:8089/';
 }
 
 axios.defaults.timeout = 50000; // 超时

@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'videotree',
+    name: 'videotree', // 视频目录树组件
     components: {
     },
     props: {

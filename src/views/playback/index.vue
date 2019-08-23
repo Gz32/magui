@@ -9,7 +9,9 @@
         </v-player>
       </div>
       <div class="grid-2x2" v-if="gridNum==='2x2'">
-        <v-playergrid :videoList="videoList" :playState="playState">          
+        <v-playergrid :aspectRatio="aspectRatio" 
+                      :videoList="videoList" 
+                      :playState="playState">          
         </v-playergrid>
       </div>
 
