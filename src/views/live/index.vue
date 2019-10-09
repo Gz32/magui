@@ -26,15 +26,20 @@
       </div>
       <div class="grid-item" v-if="gridNum==='2x2'">
         <v-playergrid :videoList="this.videoList"></v-playergrid>        
-      </div>      
+      </div>
       <div class="grid-item" v-if="gridNum==='2x3'">
         <v-gridplayer :layoutType="gridNum"></v-gridplayer>
       </div>
       <div class="grid-item" v-if="gridNum==='2x4'">
         <v-gridplayer :layoutType="gridNum"></v-gridplayer>
       </div>
+
       <div class="grid-item" v-if="gridNum==='3x3'">
-        <v-gridplayer :layoutType="gridNum"></v-gridplayer>
+        <!--<v-gridplayer :layoutType="gridNum"></v-gridplayer>-->
+        <v-flvgrid></v-flvgrid>
+      </div>
+      <div class="grid-item" v-if="gridNum==='flv'">
+        <v-flvplayer></v-flvplayer>
       </div>
 
       <div class="grid-control">
@@ -64,6 +69,8 @@ import vGridbar from '@/components/video/gridbar'
 import vPlayer from '@/components/video/player'
 import vPlayergrid from '@/components/video/playergrid2x2'
 import vGridplayer from '@/components/video/gridplayer'
+import vFlvplayer from '@/components/flv/flvplayer'
+import vFlvgrid from '@/components/flv/flvgrid'
 
 import api from '@/api/api'
 
@@ -74,7 +81,9 @@ export default {
     vGridbar,
     vPlayer,
     vPlayergrid,
-    vGridplayer
+    vGridplayer,
+    vFlvplayer,
+    vFlvgrid
   },
   data() {
     return {
@@ -100,12 +109,12 @@ export default {
         },{
           guid: 'FEA667A4-C541-4DCA-B4E5-1D3C7943AEB7',
           caption: '公司大华球机',
-          rtmpUrl: 'rtmp://192.168.1.76:1935/live/8E8CD150-391C-453B-A485-A1B09D8D53B4',
+          rtmpUrl: 'rtmp://192.168.1.176:1935/live/FEA667A4-C541-4DCA-B4E5-1D3C7943AEB7',
         }]
     }
   },
   mounted() {
-    this.rtmpUrl = 'rtmp://192.168.1.76:1935/live/8E8CD150-391C-453B-A485-A1B09D8D53B4';
+    this.rtmpUrl = 'rtmp://192.168.1.176:1935/live/FEA667A4-C541-4DCA-B4E5-1D3C7943AEB7';
     //this.rtmpUrl = 'rtmp://202.69.69.180:443/webcast/bshdlive-pc';
     //this.rtmpUrl = 'rtmp://58.200.131.2:1935/livetv/hunantv';
   },

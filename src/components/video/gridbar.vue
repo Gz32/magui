@@ -15,6 +15,9 @@
     <a class="grid-button" @click="layout('3x3')">
       <img src="../../icons/video/grid-3x3.png"/>
     </a>
+    <a class="grid-button" @click="layout('flv')">
+      <img src="../../icons/video/flv.png">
+    </a>
   </div>
 </template>
 

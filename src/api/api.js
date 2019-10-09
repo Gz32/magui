@@ -10,7 +10,7 @@ export default {
     },
 
     zoomCamera(id, act, step) {
-        return http.get('ffcommander/zoom?id=' + id + '&act=' + act + '&step=' + step, {});   
+        return http.get('zoomer/zoom?id=' + id + '&act=' + act + '&step=' + step, {});   
     }
 }
 

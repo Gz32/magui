@@ -59,9 +59,9 @@ const axiosInstance = axios.create({
 
 // 设置请求地址
 if (process.env.NODE_ENV == 'development') {
-    axios.defaults.baseURL = 'http://localhost:8089/opencv/';
+    axios.defaults.baseURL = 'http://localhost:8089/ffman/';
 } else if (process.env.NODE_ENV == 'production') {
-    axios.defaults.baseURL = 'http://192.168.1.76:8089/opencv/';
+    axios.defaults.baseURL = 'http://192.168.1.76:8089/ffman/';
 }
 
 axios.defaults.timeout = 50000; // 超时

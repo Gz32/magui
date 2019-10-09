@@ -191,15 +191,6 @@
     background: #000;   
   }
   
-  .player-content{
-    position: relative;
-    /* 水平居中 */
-    margin: 0 auto;
-    /* 垂直居中 */
-    top: 50%;       
-    transform: translateY(-50%);
-  }
-  
   /* 播放器播放按钮样式 scoped属性下不起作用 */
   .video-js .vjs-big-play-button{
 	  height: 2em;
