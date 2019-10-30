@@ -1,13 +1,11 @@
 <template>
-  <div class="playergrid2x2-container">
-    <div class="playergrid2x2-item" :class="currSelect==item.guid?'selected':''"
+  <div class="grid-container">
+    <div class="grid-item" :class="currSelect==item.guid?'selected':''"
          v-for="(item,index) in videoList" :key="index" 
          @click="select(index)">
       <v-player ref="playerObj"
-                :showControls="false"
                 :aspectRatio="aspectRatio"
                 :playState="playState"
-                :id="item.guid"
                 :videoUrl="item.videoUrl"
                 :rtmpUrl="item.rtmpUrl">
       </v-player>
@@ -56,17 +54,18 @@
 </script>
 
 <style scoped>
-  .playergrid2x2-container{
+  .grid-container{
     position: relative;
     height: 100%;
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
   }
-  .playergrid2x2-item{
-    width: 50%;
-    height: 50%;
-    background-color: #000;     
+  .grid-item{
+    width: 49.8%;
+    height: 49.8%;
+    background-color: #000;
+    border: 1px solid #dedede;
   }
   .selected{
     border: 1px solid rgb(145, 14, 80);

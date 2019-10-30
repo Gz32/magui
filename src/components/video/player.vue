@@ -66,17 +66,17 @@
             type: 'video/mp4',
             src: this.videoUrl        
           }],
-          notSupportedMessage: '此视频暂无法播放',
+          notSupportedMessage: '视频不可播放',
           controls: this.showControls, // 是否显示控件
           controlBar: {
             timeDivider: false,
             durationDisplay: false,
-            remainingTimeDisplay: false,
-            currentTimeDisplay: true, // 当前时间
+            remainingTimeDisplay: true,
+            currentTimeDisplay: true, // 当前时间     
             volumeControl: true,      // 声音控制键
-            playToggle: true,         // 暂停和播放键
+            playToggle: false,         // 暂停和播放键
             progressControl: true,  // 进度条
-            fullscreenToggle: false // 全屏按钮
+            fullscreenToggle: true  // 全屏按钮
           }
         }
       }
@@ -183,8 +183,7 @@
   }
 </script>
 
-<!--<style lang="scss">-->
-<style scoped>
+<style lang="scss">
   .player-container{
     position: relative;    
     height: 100% !important;
@@ -202,7 +201,9 @@
   .vjs-custom-skin > .video-js .vjs-big-play-button{
 	  margin-left: -1em;
   }
+  
   .video-js .vjs-big-play-button:hover, .vjs-custom-skin .video-js:hover .vjs-big-play-button{
+    display: none;
 	  background-color: #0000FF;
 	  transition: all 0.3s;
   }
