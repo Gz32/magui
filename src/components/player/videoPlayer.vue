@@ -94,7 +94,8 @@
         stopped: false,
         
         videoType: 'mp4',     
-        videoUrl: 'http://localhost:8089/video/fl4.mp4', // 视频地址
+        //videoUrl: 'http://localhost:8080/video/fl4.mp4', // 视频地址
+        videoUrl: 'http://192.168.137.176:80/linda.mp4',
 
         player: null,
         // 播放器选项
@@ -150,7 +151,7 @@
         this.fullScreenToggleButton = document.getElementById("fullScreen");
         this.fullScreenIcon = this.fullScreenToggleButton.getElementsByClassName('iconfont')[0];
 
-        this.video.src = 'http://localhost:8089/video/fl4.mp4';
+        this.video.src = '';//'http://localhost:8080/video/fl4.mp4';
 
         let that = this;
         // Get rid of the default controls, because we'll use our own.
