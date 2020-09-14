@@ -12,7 +12,8 @@
     props: {
       src: {
         type: String,
-        default: 'http://192.168.1.176:80/live?port=1935&app=live&stream=FEA667A4-C541-4DCA-B4E5-1D3C7943AEB7'
+        //default: 'http://192.168.1.176:80/live?port=1935&app=live&stream=FEA667A4-C541-4DCA-B4E5-1D3C7943AEB7'
+        default: 'http://192.168.10.12:8084/live?port=1935&app=live&stream=9D1AB34D-0382-4FE4-BB06-2D245E7D582A'
       }
     },
     data() {
@@ -51,13 +52,13 @@
 
 <style scoped>
   .flv-container{
-    position: relative;    
+    position: relative;
     height: 100% !important;
-    background: #000; 
+    background: #000;
   }
   .flv-content{
     position: relative;
     width: 100%;
-    height: 100%;    
+    height: 100%;
   }
 </style>

@@ -18,14 +18,15 @@
     <!-- 视频显示控件 -->
     <div class="live-content">
       <div class="grid-item" v-if="gridNum==='1x1'">
-        <v-player ref="playerObj"
-                :aspectRatio="aspectRatio"
-                :videoUrl="videoUrl"
-                :rtmpUrl="rtmpUrl">
-        </v-player>
+        <!--<v-player ref="playerObj"-->
+                <!--:aspectRatio="aspectRatio"-->
+                <!--:videoUrl="videoUrl"-->
+                <!--:rtmpUrl="rtmpUrl">-->
+        <!--</v-player>-->
+        <v-flvgrid></v-flvgrid>
       </div>
       <div class="grid-item" v-if="gridNum==='2x2'">
-        <v-playergrid :videoList="this.videoList"></v-playergrid>        
+        <v-playergrid :videoList="this.videoList"></v-playergrid>
       </div>
       <div class="grid-item" v-if="gridNum==='2x3'">
         <v-gridplayer :layoutType="gridNum"></v-gridplayer>
@@ -43,7 +44,7 @@
       </div>
 
       <div class="grid-control">
-        <v-gridbar @selectGridEvent="handleSelectGrid"></v-gridbar>  
+        <v-gridbar @selectGridEvent="handleSelectGrid"></v-gridbar>
       </div>
     </div>
 
@@ -91,7 +92,7 @@ export default {
       aspectRatio: '16:9',
       videoUrl: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
       rtmpUrl: '', // 默认为空, 播放前会有一小段时间黑屏, 且必须再刷新一次才能播放
-      
+
       treeData: [],
 
       videoList: [{
@@ -130,7 +131,7 @@ export default {
       }).catch((err) => {
       });
     },
-    
+
     // 布局选择事件
     handleSelectGrid(val) {
       this.gridNum = val;
@@ -179,8 +180,8 @@ export default {
     margin: 0;
     height: 36px;
     line-height: 36px;
-    border: 1px solid #dedede;        
-    background: linear-gradient(#ffffff,#f1f1f1);    
+    border: 1px solid #dedede;
+    background: linear-gradient(#ffffff,#f1f1f1);
     color: #000;
   }
   .live-title span{
@@ -194,8 +195,8 @@ export default {
 
   .live-left{
     position: relative;
-    width: 15%;       
-    margin-right: 2px;    
+    width: 15%;
+    margin-right: 2px;
   }
   .live-left-tree{
     position: relative;
@@ -206,7 +207,7 @@ export default {
   .live-right{
     position: relative;
     width: 14.6%;
-    margin-left: 2px;    
+    margin-left: 2px;
   }
   .live-right-zoomer{
     border-top: 1px solid #dedede;
